@@ -1,6 +1,8 @@
 get selected color and send it to game.js
 
-game.js => give takes cod
+done game.js => give takes color
 
-game takes the code now how to show that the code is correct or not=> right color
+done game takes the code now how to show that the code is correct or not=> right color
                                                                    => position and color right 
+
+done game sends clue to clue box ( gray for color correct and red for position and color correct)
