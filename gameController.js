@@ -11,6 +11,7 @@ const setColorAsCode = function() {
   document.querySelector(
     `#${parentId} #${id}`
   ).innerText = localStorage.getItem('color');
+  localStorage.removeItem('color');
 };
 
 const enableNextMove = function(nextMoveNUm) {
