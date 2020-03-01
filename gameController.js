@@ -16,16 +16,16 @@ const setColorAsCode = function() {
 
 const enableNextMove = function(nextMoveNUm) {
   const nextMove = document.querySelector(`#M_${nextMoveNUm}`);
-  nextMove.querySelector('.moveCompleted').classList.add('clickable');
+  nextMove.querySelector('.moveCompleted').classList.remove('notClickable');
   const newPositions = Array.from(nextMove.querySelectorAll('.position'));
-  newPositions.map(position => position.classList.add('clickable'));
+  newPositions.map(position => position.classList.remove('notClickable'));
 };
 
 const disablePreviousMove = function(attemptNum) {
   const previousMove = document.querySelector(`#M_${attemptNum}`);
-  previousMove.querySelector('.moveCompleted').classList.remove('clickable');
+  previousMove.querySelector('.moveCompleted').classList.add('notClickable');
   const newPositions = Array.from(previousMove.querySelectorAll('.position'));
-  newPositions.map(position => position.classList.remove('clickable'));
+  newPositions.map(position => position.classList.remove('notClickable'));
 };
 
 const giveClue = function(rightColor, bothRight, attemptNum) {
