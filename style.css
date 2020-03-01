@@ -1,0 +1,67 @@
+.board {
+  height: 500px;
+  width: 500px;
+  border: 2px solid black;
+  display: flex;
+}
+
+#clueBox {
+  width: 35%;
+  height: 100%;
+  border: 2px solid black;
+  display: flex;
+  flex-flow: column-reverse;
+  justify-content: space-between;
+}
+
+#playerMoves {
+  width: 65%;
+  height: 100%;
+  border: 2px solid black;
+  display: flex;
+  flex-flow: column-reverse;
+  justify-content: space-between;
+}
+
+.move {
+  display: flex;
+  margin: 1%;
+  height: 8%;
+  width: 98%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.position {
+  height: 100%;
+  width: 16%;
+  background: blanchedalmond;
+}
+
+.moveCompleted {
+  height: 100%;
+  width: 15%;
+  background-color: rgba(0, 252, 155, 0.5);
+  align-items: center;
+}
+
+#chooseColor {
+  display: flex;
+  height: 50px;
+  width: 30%;
+}
+
+.color {
+  align-items: center;
+  width: 15%;
+  height: 100%;
+}
+
+.notClickable {
+  pointer-events: none;
+}
+
+.clickable {
+  pointer-events: auto;
+}
