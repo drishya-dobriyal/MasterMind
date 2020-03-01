@@ -25,7 +25,7 @@ const disablePreviousMove = function(attemptNum) {
   const previousMove = document.querySelector(`#M_${attemptNum}`);
   previousMove.querySelector('.moveCompleted').classList.add('notClickable');
   const newPositions = Array.from(previousMove.querySelectorAll('.position'));
-  newPositions.map(position => position.classList.remove('notClickable'));
+  newPositions.map(position => position.classList.add('notClickable'));
 };
 
 const giveClue = function(rightColor, bothRight, attemptNum) {
