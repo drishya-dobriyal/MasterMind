@@ -3,10 +3,10 @@ const clueGrid = function() {
   for (let pos = 0; pos < 10; pos++) {
     div += `
       <div id="CB_${pos}" class="move">
-          <div class="position" id="C_1"></div>
-          <div class="position" id="C_2"></div>
-          <div class="position" id="C_3"></div>
-          <div class="position" id="C_4"></div>
+          <div class="position"></div>
+          <div class="position"></div>
+          <div class="position"></div>
+          <div class="position"></div>
       </div>`;
   }
   document.getElementById('clueBox').innerHTML = div;
