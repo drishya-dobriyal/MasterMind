@@ -24,8 +24,10 @@ const enableNextMove = function(nextMoveNUm) {
 const disablePreviousMove = function(attemptNum) {
   const previousMove = document.querySelector(`#M_${attemptNum}`);
   previousMove.querySelector('.moveCompleted').classList.add('notClickable');
-  const newPositions = Array.from(previousMove.querySelectorAll('.position'));
-  newPositions.map(position => position.classList.add('notClickable'));
+  const previousPositions = Array.from(
+    previousMove.querySelectorAll('.position')
+  );
+  previousPositions.map(position => position.classList.add('notClickable'));
 };
 
 const giveClue = function(rightColor, bothRight, attemptNum) {
@@ -54,6 +56,9 @@ const checkPlayerCode = function() {
   );
   if (crackedCode) {
     alert('cracked Code');
+  }
+  if (attemptNum === 9) {
+    alert('Attempt completed.');
   }
   giveClue(rightColor, bothRight, attemptNum);
   enableNextMove(attemptNum + 1);
