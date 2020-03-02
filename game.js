@@ -22,15 +22,15 @@ class Game {
   interpretedCode(playerCode) {
     let rightColor = 0;
     let bothRight = 0;
-    for (let i = 0; i < this.code.length; i++) {
-      if (this.code.includes(playerCode[i])) {
+    playerCode.forEach((inputCode, i) => {
+      if (this.code.includes(inputCode)) {
         rightColor += 1;
       }
-      if (this.code[i] === playerCode[i]) {
+      if (this.code[i] === inputCode) {
         rightColor -= 1;
         bothRight += 1;
       }
-    }
+    });
     return { rightColor, bothRight };
   }
 

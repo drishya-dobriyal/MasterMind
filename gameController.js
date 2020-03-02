@@ -37,7 +37,6 @@ const disablePreviousMove = function(attemptNum) {
 const giveClue = function(rightColor, bothRight, attemptNum) {
   const clueBox = document.querySelector(`#CB_${attemptNum}`);
   const cluePlaceholders = Array.from(clueBox.querySelectorAll('.position'));
-  console.log(clueBox, rightColor, bothRight, cluePlaceholders);
   const correctChoices = rightColor + bothRight;
   for (let choice = 0; choice < correctChoices; choice++) {
     if (rightColor != 0) {
@@ -62,7 +61,7 @@ const checkPlayerCode = function() {
     alert('cracked Code');
   }
   if (attemptNum === 9) {
-    alert('Attempt completed.');
+    alert('number of attempts finished');
   }
   giveClue(rightColor, bothRight, attemptNum);
   enableNextMove(attemptNum + 1);
