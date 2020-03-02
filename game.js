@@ -19,27 +19,35 @@ class Game {
     return game;
   }
 
-  checkCode(playerCode) {
-    console.log(this.code, playerCode, this.attemptNum);
-    const interpreted = {
-      rightColor: 0,
-      bothRight: 0,
-      crackedCode: false,
-      attemptNum: this.attemptNum
-    };
+  interpretedCode(playerCode) {
+    let rightColor = 0;
+    let bothRight = 0;
     for (let i = 0; i < this.code.length; i++) {
       if (this.code.includes(playerCode[i])) {
-        interpreted.rightColor += 1;
+        rightColor += 1;
       }
       if (this.code[i] === playerCode[i]) {
-        interpreted.rightColor -= 1;
-        interpreted.bothRight += 1;
+        rightColor -= 1;
+        bothRight += 1;
       }
     }
-    if (interpreted.bothRight === this.code.length) {
-      interpreted.crackedCode = true;
+    return { rightColor, bothRight };
+  }
+
+  checkCode(playerCode) {
+    console.log(this.code, playerCode, this.attemptNum);
+    const { rightColor, bothRight } = this.interpretedCode(playerCode);
+    let crackedCode = false;
+    if (bothRight === this.code.length) {
+      crackedCode = true;
     }
+    const attemptNum = this.attemptNum;
     this.attemptNum += 1;
-    return interpreted;
+    return {
+      attemptNum,
+      rightColor,
+      bothRight,
+      crackedCode
+    };
   }
 }
