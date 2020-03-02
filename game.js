@@ -35,7 +35,6 @@ class Game {
   }
 
   checkCode(playerCode) {
-    console.log(this.code, playerCode, this.attemptNum);
     const { rightColor, bothRight } = this.interpretedCode(playerCode);
     let crackedCode = false;
     if (bothRight === this.code.length) {
