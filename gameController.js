@@ -18,7 +18,9 @@ const enableNextMove = function(nextMoveNUm) {
   const nextMove = document.querySelector(`#M_${nextMoveNUm}`);
   nextMove.querySelector('.moveCompleted').classList.remove('notClickable');
   const newPositions = Array.from(nextMove.querySelectorAll('.position'));
-  newPositions.map(position => position.classList.remove('notClickable'));
+  newPositions.map(position =>
+    position.addEventListener('click', setColorAsCode)
+  );
 };
 
 const disablePreviousMove = function(attemptNum) {
@@ -27,7 +29,9 @@ const disablePreviousMove = function(attemptNum) {
   const previousPositions = Array.from(
     previousMove.querySelectorAll('.position')
   );
-  previousPositions.map(position => position.classList.add('notClickable'));
+  previousPositions.map(position =>
+    position.removeEventListener('click', setColorAsCode)
+  );
 };
 
 const giveClue = function(rightColor, bothRight, attemptNum) {

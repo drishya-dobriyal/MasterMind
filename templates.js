@@ -17,11 +17,11 @@ const playerGrid = function() {
   for (let pos = 0; pos < 10; pos++) {
     div += `
       <div id="M_${pos}" class="move">
-          <div class="position notClickable" id="P_1" onclick="setColorAsCode()"></div>
-          <div class="position notClickable" id="P_2" onclick="setColorAsCode()"></div>
-          <div class="position notClickable" id="P_3" onclick="setColorAsCode()"></div>
-          <div class="position notClickable" id="P_4" onclick="setColorAsCode()"></div>
-          <div class="moveCompleted notClickable">
+          <div class="position" id="P_1"></div>
+          <div class="position" id="P_2"></div>
+          <div class="position" id="P_3"></div>
+          <div class="position" id="P_4"></div>
+          <div class="moveCompleted">
             <img src="checkMark.png" height="80%" width="80%"/>
           </div>
       </div>`;
