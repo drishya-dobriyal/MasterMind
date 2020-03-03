@@ -22,7 +22,7 @@ const playerGrid = function() {
           <div class="position" id="P_3"></div>
           <div class="position" id="P_4"></div>
           <div class="moveCompleted">
-            <img src="checkMark.png" height="80%" width="80%"/>
+            <img src="../images/checkMark.png" height="80%" width="80%"/>
           </div>
       </div>`;
   }
