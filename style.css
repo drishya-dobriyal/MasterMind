@@ -1,3 +1,8 @@
+.heading {
+  height: 70px;
+  text-align: center;
+}
+
 .board {
   height: 600px;
   width: 700px;
