@@ -8,9 +8,6 @@ const setColorAsCode = function() {
   document.querySelector(
     `#${parentId} #${id}`
   ).style.backgroundColor = localStorage.getItem('color');
-  document.querySelector(
-    `#${parentId} #${id}`
-  ).innerText = localStorage.getItem('color');
   localStorage.removeItem('color');
 };
 
@@ -21,6 +18,7 @@ const enableNextMove = function(nextMoveNUm) {
   newPositions.map(position =>
     position.addEventListener('click', setColorAsCode)
   );
+  nextMove.classList.add('onMove');
 };
 
 const disablePreviousMove = function(attemptNum) {
@@ -32,6 +30,8 @@ const disablePreviousMove = function(attemptNum) {
   previousPositions.map(position =>
     position.removeEventListener('click', setColorAsCode)
   );
+  previousMove.classList.remove('onMove');
+  previousMove.classList.add('checkedMove');
 };
 
 const giveClue = function(rightColor, bothRight, attemptNum) {
@@ -52,7 +52,7 @@ const checkPlayerCode = function() {
   const id = event.target.parentNode.parentNode.id;
   const currentMove = document.getElementById(id);
   const positions = Array.from(currentMove.querySelectorAll('.position')).map(
-    move => move.innerText
+    move => move.style.backgroundColor
   );
   const { rightColor, bothRight, crackedCode, attemptNum } = this.checkCode(
     positions

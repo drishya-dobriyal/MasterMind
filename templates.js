@@ -2,7 +2,7 @@ const clueGrid = function() {
   let div = '';
   for (let pos = 0; pos < 10; pos++) {
     div += `
-      <div id="CB_${pos}" class="move">
+      <div id="CB_${pos}" class="clueBox">
           <div class="position"></div>
           <div class="position"></div>
           <div class="position"></div>

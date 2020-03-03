@@ -1,4 +1,4 @@
-const getColors = () => ['Red', 'Blue', 'Yellow', 'Orange', 'Green'];
+const getColors = () => ['red', 'blue', 'yellow', 'orange', 'green'];
 
 class Game {
   constructor(code, attemptNum) {

@@ -1,12 +1,12 @@
 .board {
-  height: 500px;
+  height: 600px;
   width: 500px;
   border: 2px solid black;
   display: flex;
 }
 
 #clueBox {
-  width: 35%;
+  width: 40%;
   height: 100%;
   border: 2px solid black;
   display: flex;
@@ -15,7 +15,7 @@
 }
 
 #playerMoves {
-  width: 65%;
+  width: 60%;
   height: 100%;
   border: 2px solid black;
   display: flex;
@@ -23,8 +23,8 @@
   justify-content: space-between;
 }
 
-.move {
-  display: flex;
+.move,
+.clueBox {
   margin: 1%;
   height: 8%;
   width: 98%;
@@ -35,8 +35,13 @@
 
 .position {
   height: 100%;
-  width: 16%;
+  width: 18%;
   background: blanchedalmond;
+  border-radius: 50%;
+}
+
+.clueBox > .position {
+  width: 25%;
 }
 
 .moveCompleted {
@@ -53,7 +58,6 @@
 }
 
 .color {
-  align-items: center;
   width: 15%;
   height: 100%;
 }
@@ -62,6 +66,10 @@
   pointer-events: none;
 }
 
-.clickable {
-  pointer-events: auto;
+.onMove {
+  border: 2px solid blueviolet;
+}
+
+.checkedMove {
+  border: 2px solid navy;
 }
