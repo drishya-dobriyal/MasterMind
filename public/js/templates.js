@@ -7,6 +7,7 @@ const clueGrid = function() {
           <div class="position"></div>
           <div class="position"></div>
           <div class="position"></div>
+          <div class="position"></div>
       </div>`;
   }
   document.getElementById('clueBox').innerHTML = div;
@@ -21,6 +22,7 @@ const playerGrid = function() {
           <div class="position" id="P_2"></div>
           <div class="position" id="P_3"></div>
           <div class="position" id="P_4"></div>
+          <div class="position" id="P_5"></div>
           <div class="moveCompleted">
             <img src="../images/checkMark.png" height="80%" width="80%"/>
           </div>

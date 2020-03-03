@@ -1,4 +1,4 @@
-const getColors = () => ['red', 'blue', 'yellow', 'orange', 'green'];
+const getColors = () => ['red', 'blue', 'yellow', 'orange', 'green', 'black'];
 
 class Game {
   constructor(code, attemptNum) {
@@ -16,6 +16,7 @@ class Game {
     }
     colors.pop();
     const game = new Game(colors, 0);
+    console.log(colors);
     return game;
   }
 
