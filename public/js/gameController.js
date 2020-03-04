@@ -31,7 +31,6 @@ const disablePreviousMove = function(attemptNum) {
     position.removeEventListener('click', setColorAsCode)
   );
   previousMove.classList.remove('onMove');
-  previousMove.classList.add('checkedMove');
 };
 
 const giveClue = function(rightColor, bothRight, attemptNum) {
