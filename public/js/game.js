@@ -20,6 +20,10 @@ class Game {
     return game;
   }
 
+  getCode() {
+    return this.code;
+  }
+
   interpretedCode(playerCode) {
     let rightColor = 0;
     let bothRight = 0;

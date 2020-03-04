@@ -48,6 +48,23 @@ const giveClue = function(rightColor, bothRight, attemptNum) {
   }
 };
 
+const showCorrectCode = function(code, text) {
+  const result = document.getElementById('result');
+
+  const header = document.createElement('h4');
+  header.innerText = text + '. Code: ';
+  result.append(header);
+  let colorData = '';
+  code.forEach((color, index) => {
+    const div = document.createElement('div');
+    div.style.backgroundColor = color;
+    div.classList.add('color');
+    div.classList.add('posColorCode');
+    div.innerText = index;
+    result.append(div);
+  });
+};
+
 const checkPlayerCode = function() {
   const id = event.target.parentNode.parentNode.id;
   const currentMove = document.getElementById(id);
@@ -58,10 +75,12 @@ const checkPlayerCode = function() {
     positions
   );
   if (crackedCode) {
-    alert('cracked Code');
+    showCorrectCode(this.getCode(), 'code cracked');
+    return;
   }
-  if (attemptNum === 9) {
-    alert('number of attempts finished');
+  if (attemptNum >= 9) {
+    showCorrectCode(this.getCode(), 'no of attempts completed');
+    return;
   }
   giveClue(rightColor, bothRight, attemptNum);
   enableNextMove(attemptNum + 1);

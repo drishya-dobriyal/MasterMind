@@ -1,11 +1,14 @@
 .heading {
   height: 70px;
+  width: 736px;
   text-align: center;
+  border: 1px solid black;
+  margin: 0px 0px 10px 313px;
 }
 
 .board {
   height: 600px;
-  width: 700px;
+  width: 1000px;
   display: flex;
   margin: 0 auto;
 }
@@ -13,19 +16,19 @@
 #clueBox {
   width: 30%;
   height: 100%;
-  border: 2px solid black;
+  border: 1px solid black;
   display: flex;
   flex-flow: column-reverse;
   justify-content: space-between;
 }
 
 #playerMoves {
-  width: 50%;
+  width: 35%;
   height: 100%;
-  border: 2px solid black;
+  border: 1px solid black;
   display: flex;
   flex-flow: column-reverse;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .move,
@@ -40,13 +43,13 @@
 
 .position {
   height: 100%;
-  width: 18%;
+  width: 16%;
   background: blanchedalmond;
   border-radius: 50%;
 }
 
 .clueBox > .position {
-  width: 25%;
+  width: 18%;
 }
 
 .moveCompleted {
@@ -56,11 +59,13 @@
   align-items: center;
 }
 
-#chooseColor {
+#chooseColor,
+#result {
   display: flex;
   flex-flow: column;
   height: 100%;
-  width: 20%;
+  width: 11%;
+  border: 1px solid black;
 }
 
 .color {
@@ -68,6 +73,12 @@
   height: 60px;
   border-radius: 50%;
   margin: 5% 20%;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.color:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 h4 {
@@ -82,5 +93,9 @@ h4 {
 
 .onMove {
   border: 2px solid blueviolet;
-  box-shadow: -1px 1px 5px 2px #888888;
+}
+
+.posColorCode {
+  display: flex;
+  justify-content: space-around;
 }
