@@ -65,7 +65,7 @@ const showCorrectCode = function(code, text) {
 };
 
 const checkPlayerCode = function() {
-  const id = event.target.parentNode.parentNode.id;
+  const id = event.target.parentNode.id;
   const currentMove = document.getElementById(id);
   const positions = Array.from(currentMove.querySelectorAll('.position')).map(
     move => move.style.backgroundColor
@@ -73,6 +73,7 @@ const checkPlayerCode = function() {
   const { rightColor, bothRight, crackedCode, attemptNum } = this.checkCode(
     positions
   );
+  giveClue(rightColor, bothRight, attemptNum);
   if (crackedCode) {
     showCorrectCode(this.getCode(), 'code cracked');
     return;
@@ -81,7 +82,6 @@ const checkPlayerCode = function() {
     showCorrectCode(this.getCode(), 'no of attempts completed');
     return;
   }
-  giveClue(rightColor, bothRight, attemptNum);
   enableNextMove(attemptNum + 1);
   disablePreviousMove(attemptNum);
 };

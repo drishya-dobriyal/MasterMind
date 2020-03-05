@@ -23,9 +23,7 @@ const playerGrid = function() {
           <div class="position" id="P_3"></div>
           <div class="position" id="P_4"></div>
           <div class="position" id="P_5"></div>
-          <div class="moveCompleted">
-            <img src="../images/checkMark.png" height="80%" width="80%"/>
-          </div>
+          <img src="../images/checkMark.png" class="moveCompleted"/>
       </div>`;
   }
   document.getElementById('playerMoves').innerHTML = div;
