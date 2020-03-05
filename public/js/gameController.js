@@ -1,5 +1,7 @@
+let playerColorChosen = '';
+
 const colorChosen = function(color) {
-  localStorage.setItem('color', color);
+  playerColorChosen = color;
 };
 
 const setColorAsCode = function() {
@@ -7,8 +9,8 @@ const setColorAsCode = function() {
   const parentId = event.target.parentNode.id;
   document.querySelector(
     `#${parentId} #${id}`
-  ).style.backgroundColor = localStorage.getItem('color');
-  localStorage.removeItem('color');
+  ).style.backgroundColor = playerColorChosen;
+  playerColorChosen = '';
 };
 
 const enableNextMove = function(nextMoveNUm) {
