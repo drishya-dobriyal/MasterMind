@@ -66,12 +66,19 @@ const showCorrectCode = function(code, text) {
   });
 };
 
+const isVacant = function(color) {
+  return color === '';
+};
+
 const checkPlayerCode = function() {
   const id = event.target.parentNode.id;
   const currentMove = document.getElementById(id);
   const positions = Array.from(currentMove.querySelectorAll('.position')).map(
     move => move.style.backgroundColor
   );
+  if (positions.some(isVacant)) {
+    return;
+  }
   const { rightColor, bothRight, crackedCode, attemptNum } = this.checkCode(
     positions
   );
