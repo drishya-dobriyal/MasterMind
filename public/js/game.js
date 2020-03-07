@@ -16,7 +16,6 @@ class Game {
     }
     colors.pop();
     const game = new Game(colors, 0);
-    console.log(colors);
     return game;
   }
 
