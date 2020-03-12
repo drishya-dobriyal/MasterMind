@@ -74,9 +74,9 @@ const checkPlayerCode = function() {
   const positions = Array.from(currentMove.querySelectorAll('.position')).map(
     move => move.style.backgroundColor
   );
-  // if (positions.some(isVacant)) {
-  //   return;
-  // }
+  if (positions.some(isVacant)) {
+    return;
+  }
   const { rightColor, bothRight, crackedCode, attemptNum } = this.checkCode(
     positions
   );
