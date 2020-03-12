@@ -17,7 +17,7 @@ const enableNextMove = function(nextMoveNUm) {
   const nextMove = document.querySelector(`#M_${nextMoveNUm}`);
   nextMove.querySelector('.moveCompleted').classList.remove('notClickable');
   const newPositions = Array.from(nextMove.querySelectorAll('.position'));
-  newPositions.map(position =>
+  newPositions.forEach(position =>
     position.addEventListener('click', setColorAsCode)
   );
   nextMove.classList.add('onMove');
@@ -29,7 +29,7 @@ const disablePreviousMove = function(attemptNum) {
   const previousPositions = Array.from(
     previousMove.querySelectorAll('.position')
   );
-  previousPositions.map(position =>
+  previousPositions.forEach(position =>
     position.removeEventListener('click', setColorAsCode)
   );
   previousMove.classList.remove('onMove');
@@ -53,17 +53,15 @@ const showCorrectCode = function(code, text) {
   const result = document.getElementById('result');
 
   const header = document.createElement('h4');
-  header.innerText = text + '. Code: ';
-  result.append(header);
+  header.innerText = text + ' Code: ';
   let colorData = '';
   code.forEach((color, index) => {
     const div = document.createElement('div');
     div.style.backgroundColor = color;
-    div.classList.add('color');
-    div.classList.add('posColorCode');
-    div.innerText = index;
-    result.append(div);
+    div.classList.add('correctColor');
+    result.prepend(div);
   });
+  result.prepend(header);
 };
 
 const isVacant = function(color) {
@@ -76,9 +74,9 @@ const checkPlayerCode = function() {
   const positions = Array.from(currentMove.querySelectorAll('.position')).map(
     move => move.style.backgroundColor
   );
-  if (positions.some(isVacant)) {
-    return;
-  }
+  // if (positions.some(isVacant)) {
+  //   return;
+  // }
   const { rightColor, bothRight, crackedCode, attemptNum } = this.checkCode(
     positions
   );
@@ -88,7 +86,7 @@ const checkPlayerCode = function() {
     return;
   }
   if (attemptNum >= 9) {
-    showCorrectCode(this.getCode(), 'no of attempts completed');
+    showCorrectCode(this.getCode(), 'Attempts completed');
     return;
   }
   enableNextMove(attemptNum + 1);
